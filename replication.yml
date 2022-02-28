@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: web
+    tier: frontend
+
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: apache
+        image: httpd
+        ports:
+          - name: web
+            containerPort: 80
+            protocol: TCP       
+
+            
+
