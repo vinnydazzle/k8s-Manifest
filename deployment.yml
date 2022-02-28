@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: httpd
+        image: vinnydazzle/ecomm:summer 
         ports:
         - containerPort: 80
 
